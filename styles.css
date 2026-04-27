@@ -1,0 +1,253 @@
+:root {
+  --paper: #fffef8;
+  --cream: #fff7df;
+  --text: #4b2800;
+  --muted: #684215;
+  --gold: #f5b600;
+  --gold-deep: #d08f00;
+  --line: #edcf90;
+  --green: #1ca445;
+  --green-deep: #128438;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #fff4c7 0%, #ffeeb7 100%);
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+}
+
+.mobile-wrap {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.invite-shell {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 0% 30%, rgba(255, 225, 122, 0.55) 0, transparent 36%),
+    radial-gradient(circle at 100% 70%, rgba(255, 206, 73, 0.4) 0, transparent 38%),
+    linear-gradient(180deg, #fffef4 0%, var(--cream) 100%);
+}
+
+.hero-top {
+  padding: 0.4rem 0.45rem 0;
+}
+
+.decor-title {
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  display: block;
+}
+
+.invite-block {
+  text-align: center;
+  padding: 0.55rem 1rem 1rem;
+}
+
+.subhead {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.invite-block h1 {
+  margin: 0.05rem 0 0;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(4rem, 18vw, 5.2rem);
+  line-height: 0.92;
+  font-weight: 400;
+  color: var(--gold-deep);
+}
+
+.invite-block h2 {
+  margin: 0;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.7rem, 11vw, 3.2rem);
+  line-height: 0.95;
+  font-weight: 400;
+}
+
+.couple {
+  margin: 0.6rem 0 0.25rem;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.8rem, 12vw, 3.5rem);
+  color: #8e5500;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+.photo-block {
+  position: relative;
+}
+
+.photo-block img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 86%;
+  margin: 0;
+  background: rgba(255, 250, 235, 0.98);
+  border-radius: 999px;
+  text-align: center;
+  padding: 0.35rem 0.45rem;
+  font-family: "Great Vibes", cursive;
+  font-size: 2rem;
+  color: #563108;
+}
+
+.card {
+  margin: 0.7rem;
+  border-radius: 22px;
+  background: var(--paper);
+  border: 1px solid #f0ddb3;
+  padding: 1rem 0.85rem 1.05rem;
+  box-shadow: 0 8px 22px rgba(125, 80, 5, 0.14);
+}
+
+h3 {
+  margin: 0;
+  text-align: center;
+  font-family: "Great Vibes", cursive;
+  font-size: 2.8rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.details-grid,
+.warning-grid {
+  margin-top: 0.45rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.details-grid article,
+.warning-grid article {
+  text-align: center;
+  padding: 0.5rem 0.35rem;
+}
+
+.details-grid article + article,
+.warning-grid article + article {
+  border-left: 1px dashed var(--line);
+}
+
+[data-lucide] {
+  width: 27px;
+  height: 27px;
+  stroke-width: 1.8;
+  color: var(--gold-deep);
+}
+
+.label {
+  margin: 0.35rem 0 0.18rem;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.details-grid p,
+.warning-grid p {
+  margin: 0;
+  font-size: 0.91rem;
+  line-height: 1.28;
+  font-weight: 500;
+}
+
+.btn {
+  width: min(290px, 96%);
+  margin: 0.85rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.86rem 0.9rem;
+  font-size: 1.07rem;
+  font-weight: 700;
+}
+
+.maps-btn {
+  background: linear-gradient(180deg, #ffd23f, #efb006);
+  color: #4b2a00;
+}
+
+.single-photo {
+  margin: 0.65rem 0.7rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.single-photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.warning-strip {
+  margin: 0.2rem 0.7rem 0.6rem;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 14% 40%, rgba(255, 239, 134, 0.92) 0, transparent 40%),
+    radial-gradient(circle at 86% 60%, rgba(255, 214, 91, 0.9) 0, transparent 40%),
+    linear-gradient(180deg, #ffe974, #ffd94b);
+  padding: 0.9rem 0.75rem;
+}
+
+.warning-strip h3 {
+  margin-bottom: 0.2rem;
+  font-size: 2.45rem;
+}
+
+.rsvp-card {
+  text-align: center;
+}
+
+.rsvp-card p {
+  margin: 0.42rem 0 0;
+  font-size: 1.3rem;
+  line-height: 1.35;
+}
+
+.whatsapp-btn {
+  margin-top: 0.9rem;
+  background: linear-gradient(180deg, var(--green), var(--green-deep));
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  padding: 0.2rem 1rem 1.2rem;
+  font-family: "Great Vibes", cursive;
+  font-size: 2.25rem;
+  color: #5e3508;
+}
+
+@media (min-width: 431px) {
+  .invite-shell {
+    box-shadow: 0 10px 30px rgba(114, 71, 0, 0.2);
+  }
+}
