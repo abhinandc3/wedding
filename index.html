@@ -1,118 +1,76 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haldi Ceremony Invite</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <main class="mobile-wrap">
-      <section class="invite-shell">
-        <header class="hero-top">
-          <img
-            class="decor-title"
-            src="./Gemini_Generated_Image_rz93e7rz93e7rz93.png"
-            alt="Haldi decorative title card"
-          />
-        </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haldi Ceremony Invite</title>
 
-        <section class="hero invite-block">
-          <p class="subhead">You're Invited To Our</p>
-          <h1>Haldi</h1>
-          <h2>Ceremony</h2>
-          <p class="couple">Abh &amp; Diya</p>
-          <p class="tagline">Let's get drenched in haldi, love &amp; laughter!</p>
-        </section>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        <section class="photo-block">
-          <img
-            src="./1000333943%20-%20Edited.png"
-            alt="Haldi ceremony couple photo"
-          />
-          <p class="photo-caption">Together, let the fun begin!</p>
-        </section>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-        <section class="card details-card">
-          <h3>Event Details</h3>
-          <div class="details-grid">
-            <article>
-              <i data-lucide="calendar-days"></i>
-              <p class="label">Date</p>
-              <p>25 May 2026</p>
-              <p>Saturday</p>
-            </article>
-            <article>
-              <i data-lucide="clock-3"></i>
-              <p class="label">Time</p>
-              <p>10:30 AM</p>
-              <p>Onwards</p>
-            </article>
-            <article>
-              <i data-lucide="map-pin"></i>
-              <p class="label">Venue</p>
-              <p>The Yellow House</p>
-              <p>Civil Lines, Jaipur</p>
-            </article>
-          </div>
-          <a
-            class="btn maps-btn"
-            href="https://www.google.com/maps/search/?api=1&query=The+Yellow+House+Civil+Lines+Jaipur"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i data-lucide="map"></i>
-            Open In Maps
-          </a>
-        </section>
+<body>
+  <main class="container">
 
-        <section class="single-photo">
-          <img
-            src="./ChatGPT%20Image%20Apr%2027,%202026,%2009_26_01%20PM.png"
-            alt="Bride portrait in yellow haldi theme"
-          />
-        </section>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <h4>You're Invited</h4>
+      <h1>Haldi Ceremony</h1>
+      <p class="couple">Abh & Diya</p>
+      <p class="tagline">A splash of love, laughter & turmeric ✨</p>
+    </section>
 
-        <section class="warning-strip">
-          <h3>A Little Warning!</h3>
-          <div class="warning-grid">
-            <article>
-              <i data-lucide="shirt"></i>
-              <p class="label">Dress Code</p>
-              <p>Yellow Only</p>
-            </article>
-            <article>
-              <i data-lucide="paint-bucket"></i>
-              <p class="label">Warning</p>
-              <p>You WILL Get Messy!</p>
-            </article>
-            <article>
-              <i data-lucide="camera"></i>
-              <p class="label">Bring</p>
-              <p>Your Best Smiles &amp; Energy!</p>
-            </article>
-          </div>
-        </section>
+    <!-- IMAGE -->
+    <section class="image-card">
+      <img src="image.png" alt="Abh and Diya Haldi moment" />
+    </section>
 
-        <section class="card rsvp-card">
-          <h3>RSVP</h3>
-          <p>Let us know you're coming to put haldi on us!</p>
-          <a class="btn whatsapp-btn" href="https://wa.me/911234567890" target="_blank" rel="noopener noreferrer">
-            <i data-lucide="message-circle"></i>
-            Confirm On WhatsApp
-          </a>
-        </section>
+    <!-- DETAILS -->
+    <section class="glass card">
+      <h2>Event Details</h2>
 
-        <footer>Can't wait to celebrate with you!</footer>
-      </section>
-    </main>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="./script.js"></script>
-  </body>
+      <div class="grid">
+        <div>
+          <p class="label">Date</p>
+          <p>25 May 2026</p>
+          <span>Monday</span>
+        </div>
+
+        <div>
+          <p class="label">Time</p>
+          <p>10:30 AM</p>
+          <span>Onwards</span>
+        </div>
+
+        <div>
+          <p class="label">Venue</p>
+          <p>The Yellow House</p>
+          <span>Civil Lines, Jaipur</span>
+        </div>
+      </div>
+
+      <a class="btn" href="#">View Location</a>
+    </section>
+
+    <!-- HIGHLIGHT STRIP -->
+    <section class="highlight">
+      <p>Dress Code: <strong>Yellow Only 💛</strong></p>
+      <p>Warning: You WILL get messy 😄</p>
+    </section>
+
+    <!-- RSVP -->
+    <section class="glass card rsvp">
+      <h2>RSVP</h2>
+      <p>Join us for the celebration!</p>
+      <a class="btn whatsapp" href="#">Confirm on WhatsApp</a>
+    </section>
+
+    <footer>
+      <p>We can't wait to celebrate with you 💫</p>
+    </footer>
+
+  </main>
+</body>
 </html>
