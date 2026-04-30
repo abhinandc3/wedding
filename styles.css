@@ -9,12 +9,36 @@ body {
   font-family: 'Poppins', sans-serif;
   background: url("./imagebg.jpeg") no-repeat center center/cover;
   min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 12px 8px;
 }
 
 .container {
-  max-width: 420px;
-  margin: auto;
-  padding: 20px;
+  width: min(100%, 420px);
+  min-height: calc(100vh - 24px);
+  margin: 0;
+  padding: 34px 16px 20px;
+  border: 10px solid #0e0e0e;
+  border-radius: 40px;
+  background: rgba(255, 248, 228, 0.82);
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 42px rgba(44, 23, 0, 0.35);
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 170px;
+  height: 24px;
+  transform: translateX(-50%);
+  border-radius: 0 0 16px 16px;
+  background: #0e0e0e;
+  z-index: 5;
 }
 
 /* HERO */
@@ -71,14 +95,43 @@ body {
 /* DETAILS GRID */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 15px;
   margin-top: 15px;
+}
+.detail-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.detail-col + .detail-col {
+  border-left: 1px dashed rgba(116, 77, 10, 0.35);
+  padding-left: 10px;
 }
 
 .label {
   font-size: 12px;
-  opacity: 0.6;
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+}
+
+.detail-col p:not(.label) {
+  line-height: 1.25;
+  font-size: 14px;
+}
+
+.detail-col span {
+  line-height: 1.25;
+  font-size: 13px;
+  text-align: center;
+}
+
+.venue-col span {
+  max-width: 120px;
 }
 
 /* BUTTON */
@@ -119,8 +172,27 @@ footer {
 }
 
 .title-image {
-  width: 220px;       /* adjust size */
+  width: min(500px, 90%);
   max-width: 80%;
   margin: 10px auto;
   display: block;
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-inline: 12px;
+  }
+
+  .grid {
+    gap: 10px;
+  }
+
+  .detail-col + .detail-col {
+    padding-left: 6px;
+  }
+
+  .detail-col p:not(.label),
+  .detail-col span {
+    font-size: 12px;
+  }
 }
