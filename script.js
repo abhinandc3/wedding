@@ -6,10 +6,56 @@ if (window.AOS) {
   window.AOS.init();
 }
 
+const intro = document.getElementById("intro");
+const introEnvelope = document.querySelector(".intro-envelope");
+const introPetals = document.querySelector(".intro-petals");
+const bgMusic = document.getElementById("bgMusic");
+
+if (introPetals) {
+  const introPetalCount = 16;
+  for (let i = 0; i < introPetalCount; i += 1) {
+    const petal = document.createElement("span");
+    petal.className = "intro-petal";
+    petal.style.left = `${Math.random() * 100}%`;
+    petal.style.animationDelay = `${Math.random() * 7}s`;
+    petal.style.animationDuration = `${9 + Math.random() * 7}s`;
+    petal.style.setProperty("--drift", `${(Math.random() * 90 - 45).toFixed(0)}px`);
+    introPetals.appendChild(petal);
+  }
+}
+
+function startIntroSequence() {
+  if (!intro || intro.classList.contains("is-open")) return;
+
+  intro.classList.add("is-open");
+
+  if (bgMusic) {
+    bgMusic.play().catch(() => {});
+  }
+
+  window.setTimeout(() => {
+    intro.classList.add("is-hidden");
+  }, 1900);
+
+  window.setTimeout(() => {
+    intro.remove();
+  }, 2700);
+}
+
+if (introEnvelope) {
+  introEnvelope.addEventListener("click", startIntroSequence, { once: true });
+  introEnvelope.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      startIntroSequence();
+    }
+  });
+}
+
 const petalsLayer = document.querySelector(".petals-layer");
 
 if (petalsLayer) {
-  const petalCount = 18;
+  const petalCount = 10;
   const flowerCount = 6;
 
   for (let i = 0; i < petalCount; i += 1) {

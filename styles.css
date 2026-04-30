@@ -13,6 +13,137 @@ body {
   overflow-x: hidden;
 }
 
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: opacity 700ms ease;
+}
+
+#intro.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-bg {
+  position: absolute;
+  inset: 0;
+  background: url("./imagebg.jpeg") center/cover no-repeat;
+  filter: blur(10px) brightness(0.78);
+  transform: scale(1.08);
+}
+
+.intro-petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.intro-petal {
+  position: absolute;
+  top: -12vh;
+  width: 10px;
+  height: 14px;
+  border-radius: 70% 30% 70% 30%;
+  background: linear-gradient(180deg, #f4c542, #e6b800);
+  opacity: 0.75;
+  filter: drop-shadow(0 1px 2px rgba(120, 80, 0, 0.22));
+  animation: fallPetal linear infinite;
+}
+
+.intro-envelope {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.envelope {
+  position: relative;
+  width: min(82vw, 320px);
+  height: min(54vw, 210px);
+  filter: drop-shadow(0 14px 30px rgba(18, 11, 0, 0.35));
+}
+
+.envelope-pocket {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 100%;
+  background: linear-gradient(180deg, #f6d876 0%, #e6b800 100%);
+  border-radius: 10px;
+  clip-path: polygon(0% 0%, 50% 52%, 100% 0%, 100% 100%, 0% 100%);
+  box-shadow: inset 0 0 0 1px rgba(139, 91, 0, 0.18);
+}
+
+.envelope-flap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60%;
+  transform-origin: top center;
+  background: linear-gradient(180deg, #f8de8a 0%, #e8bb34 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-radius: 8px 8px 0 0;
+  transition: transform 900ms cubic-bezier(0.32, 0.78, 0.2, 1);
+  box-shadow: inset 0 0 0 1px rgba(137, 87, 0, 0.2);
+  z-index: 3;
+}
+
+.letter {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  bottom: 16%;
+  background: #fffaf0;
+  border-radius: 8px;
+  padding: 12px 10px;
+  text-align: center;
+  color: #53320a;
+  box-shadow: 0 8px 18px rgba(52, 34, 4, 0.2);
+  transform: translateY(34%);
+  transition: transform 1100ms cubic-bezier(0.2, 0.75, 0.2, 1);
+  z-index: 1;
+}
+
+.letter p {
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.letter h3 {
+  margin-top: 4px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  line-height: 1.1;
+  color: #9b6b00;
+}
+
+.intro-hint {
+  margin-top: 18px;
+  color: #f8df9a;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-size: 11px;
+  background: rgba(50, 32, 3, 0.38);
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+#intro.is-open .envelope-flap {
+  transform: rotateX(165deg);
+}
+
+#intro.is-open .letter {
+  transform: translateY(-56%);
+}
+
 .container {
   width: min(100%, 420px);
   margin: auto;
@@ -48,17 +179,26 @@ body {
   top: -15vh;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 30% 30%, #fff4ad 0 18%, transparent 19%),
-    radial-gradient(circle at 70% 35%, #ffe77c 0 17%, transparent 18%),
-    radial-gradient(circle at 50% 72%, #ffd85b 0 24%, transparent 25%),
-    radial-gradient(circle, #ffcf45 0 40%, #f2ac00 70%);
-  box-shadow:
-    0 0 0 2px rgba(239, 169, 0, 0.5) inset,
-    0 2px 6px rgba(120, 80, 0, 0.3);
-  opacity: 0.88;
+    radial-gradient(circle, #ffd43f 58%, transparent 60%),
+    repeating-conic-gradient(
+      from 0deg,
+      #ffe986 0deg 16deg,
+      #ffcf47 16deg 32deg
+    );
+  box-shadow: 0 2px 8px rgba(120, 80, 0, 0.3);
+  opacity: 0.94;
   animation-name: fallPetal;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+.flower::before {
+  content: "";
+  position: absolute;
+  inset: 34%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f7a800 0%, #d68400 72%);
+  box-shadow: 0 0 0 1px rgba(132, 82, 0, 0.3);
 }
 
 @keyframes fallPetal {
