@@ -5,9 +5,10 @@
 }
 
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #fff6d5, #ffe8a3);
-  color: #333;
+  background: url("imagebg.jpeg") no-repeat center center/cover;
+  min-height: 100vh;
 }
 
 .container {
