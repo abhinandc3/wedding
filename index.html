@@ -6,11 +6,12 @@
   <title>Wedding Invitation</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <div class="petals-layer" aria-hidden="true"></div>
   <main class="container">
 
     <!-- HERO -->
@@ -28,7 +29,7 @@
     </section>
 
     <!-- DETAILS -->
-    <section class="glass card">
+    <section class="glass card" data-aos="fade-up">
       <div class="countdown" aria-live="polite">
         <p class="countdown-label">Starting In</p>
         <div class="countdown-grid">
@@ -87,6 +88,7 @@
     </footer>
 
   </main>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="script.js"></script>
 </body>
