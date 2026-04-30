@@ -10,6 +10,7 @@ const intro = document.getElementById("intro");
 const introEnvelope = document.querySelector(".intro-envelope");
 const introPetals = document.querySelector(".intro-petals");
 const bgMusic = document.getElementById("bgMusic");
+let resumeMusicOnFocus = false;
 
 if (introPetals) {
   const introPetalCount = 16;
@@ -47,6 +48,18 @@ if (introEnvelope) {
     }
   });
 }
+
+document.addEventListener("visibilitychange", () => {
+  if (!bgMusic) return;
+
+  if (document.hidden) {
+    resumeMusicOnFocus = !bgMusic.paused;
+    bgMusic.pause();
+  } else if (resumeMusicOnFocus) {
+    bgMusic.play().catch(() => {});
+    resumeMusicOnFocus = false;
+  }
+});
 
 const petalsLayer = document.querySelector(".petals-layer");
 
