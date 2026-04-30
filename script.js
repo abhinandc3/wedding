@@ -36,10 +36,6 @@ function startIntroSequence() {
   window.setTimeout(() => {
     intro.classList.add("is-hidden");
   }, 1900);
-
-  window.setTimeout(() => {
-    intro.remove();
-  }, 2700);
 }
 
 if (introEnvelope) {
